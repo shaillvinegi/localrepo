@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcue | Create Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="login-body">
+
+  <div class="login-wrapper">
+
+   
+    <div class="login-image">
+      <h1>Join <span>Welcue</span></h1>
+      <p>Build skills. Crack interviews. Get placed.</p>
+      <img src="assets/signup-illustration.png" alt="Career growth">
+    </div>
+
+    
+    <div class="login-card">
+
+      <div class="logo">
+        <span class="logo-main">Wel</span><span class="logo-accent">cue</span>
+      </div>
+
+      <h2>Create Account</h2>
+
+      <div class="input-group">
+        <input type="text" id="name" required>
+        <label>Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" required>
+        <label>Password</label>
+        <span class="toggle-password" id="togglePassword">👁️</span>
+      </div>
+
+      <div class="input-group">
+        <select id="role">
+          <option value="">Select Role</option>
+          <option>Student</option>
+          <option>Fresher</option>
+          <option>Intern</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <select id="interest">
+          <option value="">Primary Interest</option>
+          <option>Web Development</option>
+          <option>Data Structures</option>
+          <option>AI / ML</option>
+          <option>Core CS</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" id="signupBtn">Create Account</button>
+
+      <p class="extra-text">
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+
+    </div>
+  </div>
+
+ 
+  <script>
+    const togglePassword = document.getElementById("togglePassword");
+    const password = document.getElementById("password");
+
+    togglePassword.onclick = () => {
+      password.type = password.type === "password" ? "text" : "password";
+      togglePassword.textContent = password.type === "password" ? "👁️" : "🙈";
+    };
+
+    document.getElementById("signupBtn").onclick = () => {
+      const user = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        role: document.getElementById("role").value,
+        interest: document.getElementById("interest").value
+      };
+
+      if (!user.name || !user.email || !password.value) {
+        alert("Please fill all required fields");
+        return;
+      }
+
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      window.location.href = "dashboard.html";
+    };
+  </script>
+
+</body>
+</html>

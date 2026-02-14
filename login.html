@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcue | Student Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body class="login-body">
+
+  <div class="login-wrapper">
+
+   
+    <div class="card login-card">
+      <h1>Welcome to <span>Welcue</span></h1>
+      <p>Your smart placement & learning companion</p>
+      <img src="pictures/image.png" alt="Welcue Illustration" class="login-img">
+    </div>
+
+   
+    <div class="login-card">
+
+      <div class="logo">
+        <span class="logo-main">Wel</span><span class="logo-accent">cue</span>
+      </div>
+
+      <h2>Student Login</h2>
+
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label>Email</label>
+        <div class="error" id="emailError">Please enter your email</div>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" required>
+        <label>Password</label>
+        <span class="toggle-password" id="togglePassword">👁️</span>
+        <div class="error" id="passError">Please enter your password</div>
+      </div>
+
+      <button class="btn-primary" id="loginBtn">Login</button>
+
+      <p class="extra-text">
+        New to Welcue? <a href="signup.html">Create Account</a>
+
+      </p>
+
+    </div>
+  </div>
+
+  
+  <script>
+    const password = document.getElementById('password');
+    const togglePassword = document.getElementById('togglePassword');
+
+    togglePassword.addEventListener('click', () => {
+      if (password.type === "password") {
+        password.type = "text";
+        togglePassword.textContent = "🙈";
+      } else {
+        password.type = "password";
+        togglePassword.textContent = "👁️";
+      }
+    });
+
+    const loginBtn = document.getElementById('loginBtn');
+    const email = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
+    const passError = document.getElementById('passError');
+
+    loginBtn.addEventListener('click', () => {
+      let valid = true;
+
+      if (email.value.trim() === "") {
+        emailError.style.display = "block";
+        valid = false;
+      } else {
+        emailError.style.display = "none";
+      }
+
+      if (password.value.trim() === "") {
+        passError.style.display = "block";
+        valid = false;
+      } else {
+        passError.style.display = "none";
+      }
+
+      if (valid) {
+        window.location.href = "dashboard.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
