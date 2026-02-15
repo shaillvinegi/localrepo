@@ -549,8 +549,6 @@ select {
 }
 
 
-/* ===== PROFILE PAGE (Simple Version) ===== */
-
 body.profile-page {
   background: linear-gradient(135deg, #f4f6f9, #e5e7eb);
   display: flex;
@@ -615,4 +613,37 @@ body.profile-page {
 
 .btn {
   margin-top: 10px;
+}
+
+
+.recommendation {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  background: #f9fafb;
+  transition: 0.2s;
+}
+
+.recommendation:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.recommendation h3 {
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.recommendation p {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.match {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--secondary);
 }
