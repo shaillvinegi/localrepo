@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assessment Result | Welcue</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-bg">
+
+  <!-- HEADER -->
+  <div class="dashboard-header">
+    <h1>Assessment Result</h1>
+    <p>Your performance analysis</p>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div class="result-container">
+
+    <!-- SCORE -->
+    <div class="result-section center">
+      <h2>🎯 Overall Score</h2>
+      <h1 id="score">0/0</h1>
+
+      <p id="percentage"></p>
+      <p id="performance"></p>
+      <p id="feedback"></p>
+    </div>
+
+    <!-- STATS -->
+    <div class="result-section">
+      <h3>📊 Stats</h3>
+      <p>Correct: <strong id="correct">0</strong></p>
+      <p>Total: <strong id="total">0</strong></p>
+    </div>
+
+    <!-- STRENGTH & WEAKNESS -->
+    <div class="result-grid">
+
+      <div class="result-section">
+        <h3>💪 Strengths</h3>
+        <p id="strengths">Loading...</p>
+      </div>
+
+      <div class="result-section">
+        <h3>⚠️ Needs Improvement</h3>
+        <p id="weaknesses">Loading...</p>
+      </div>
+
+    </div>
+
+    <!-- CHART -->
+    <div class="result-section center">
+      <h3>📈 Performance Chart</h3>
+      <canvas id="resultChart"></canvas>
+    </div>
+
+    <!-- REVIEW -->
+    <div class="result-section">
+      <h3>📝 Answer Review</h3>
+      <div id="reviewSection"></div>
+    </div>
+
+    <!-- BUTTON -->
+    <div class="center" style="margin-top: 20px;">
+      <button class="btn-primary" onclick="goToDashboard()">
+        Back to Dashboard
+      </button>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="js/result.js"></script>
+
+  <script>
+    function goToDashboard() {
+      window.location.href = "dashboard.html";
+    }
+  </script>
+
+</body>
+</html>
