@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Placement Score</title>
+  <title></title>
   <link rel="stylesheet" href="css/style.css">
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 <div class="container">
+
+  
   <div class="card">
     <h2>Placement Readiness</h2>
+
+    
     <p>Profile Completion: 85%</p>
     <p>Skill Match: 78%</p>
     <p>Interview Readiness: 62%</p>
+
     <h3>Overall Chance: <span style="color:#00ff99">HIGH</span></h3>
   </div>
+
+  
+  <div class="card">
+    <h2>Your Test Result</h2>
+    <p id="score"></p>
+    <p id="percentage"></p>
+    <p id="performance"></p>
+  </div>
+
+  
+  <div class="card">
+    <h3>Performance Breakdown</h3>
+    <canvas id="resultChart"></canvas>
+  </div>
+
+
+  <div class="card">
+    <h3>AI Feedback</h3>
+    <p id="feedback"></p>
+  </div>
+
+
+  <div class="card">
+    <h3>Time Analysis</h3>
+    <p id="timeTaken"></p>
+    <p id="avgTime"></p>
+  </div>
+
+ 
+  <div class="card" id="reviewSection">
+    <h3>Question Review</h3>
+  </div>
+
+
+  <div class="card">
+    <button onclick="retakeQuiz()">Retake Test</button>
+    <button onclick="downloadResult()">Download Result</button>
+  </div>
+
 </div>
+
+<script src="js/result.js"></script>
+
 </body>
 </html>

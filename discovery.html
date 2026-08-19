@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discovery Quiz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <div class="card">
+    <h2>Select Your Interests</h2>
+    <label><input type="checkbox" value="WEB"> Web Development</label><br>
+<label><input type="checkbox" value="DATA"> Data Science</label><br>
+<label><input type="checkbox" value="AI"> AI / ML</label><br>
+<label><input type="checkbox" value="CYBER"> Cyber Security</label><br>
+    <br>
+    <button class="btn" onclick="next()">Submit</button>
+  </div>
+</div>
+
+<script>
+<script>
+function next() {
+  let selected = [];
+
+  document.querySelectorAll("input[type=checkbox]:checked")
+    .forEach(cb => selected.push(cb.value));
+
+  if (selected.length === 0) {
+    alert("Please select at least one interest!");
+    return;
+  }
+
+  // ✅ Save to localStorage
+  localStorage.setItem("selectedInterests", JSON.stringify(selected));
+
+  // 👉 Redirect to adaptive quiz
+  window.location.href = "adaptiveQuiz.html";
+}
+</script>
+</script>
+</body>
+</html>

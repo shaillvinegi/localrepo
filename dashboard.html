@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcue Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-bg">
+
+  <!-- HEADER -->
+  <header class="dashboard-header">
+    <img src="assets/welcue-logo.png" class="logo-small">
+    <h1>Welcome, Shaillvi 👋</h1>
+    <p>Your personalized placement journey starts here</p>
+  </header>
+
+  <!-- PROGRESS -->
+  <section class="progress-section">
+    <div class="progress-bar">
+      <div class="progress-fill" style="width: 20%"></div>
+    </div>
+    <p>Step 1 of 5 completed</p>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps-grid">
+
+    <div class="step-card" onclick="goTo('profile.html')">
+      <span class="step-number">1</span>
+      <h3>Build Profile</h3>
+      <p>Tell us about your skills & goals</p>
+    </div>
+
+
+    <div class="step-card" onclick="goTo('discovery.html')">
+      <span class="step-number">2</span>
+      <h3>Discovery Quiz</h3>
+      <p>Identify your strengths & interests</p>
+    </div>
+
+
+    <div class="step-card" onclick="goTo('quiz.html')">
+      <span class="step-number">3</span>
+      <h3>Assessments</h3>
+      <p>Test your technical knowledge</p>
+    </div>
+
+    <div class="step-card" onclick="goTo('recommendation.html')">
+      <span class="step-number">4</span>
+      <h3>AI Recommendations</h3>
+      <p>Career & skill roadmap</p>
+    </div>
+
+   <div class="step-card" onclick="goTo('resourcehub.html')">
+  <span class="step-number">5</span>
+  <h3>Resource Recommendations</h3>
+  <p>Personalized study materials based on your interests</p>
+</div>
+
+    <div class="step-card highlight" onclick="goTo('score.html')">
+      <span class="step-number">6</span>
+      <h3>Placement Score</h3>
+      <p>See your readiness score</p>
+    </div>
+
+  </section>
+
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+  </script>
+
+</body>
+</html>
