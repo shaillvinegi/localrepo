@@ -1,59 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Student Profile | Welcue</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile | Welcue</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="profile-page">
 
-  <div class="container">
-    <div class="card profile-card">
+    <div class="container">
 
-      <h2>Build Your Profile</h2>
-      <p class="subtitle">Let recruiters understand your strengths</p>
+        <div class="card profile-card">
 
-      <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" placeholder="Enter your full name">
-      </div>
+            <h2>Build Your Profile</h2>
 
-      <div class="form-group">
-        <label>Major / Branch</label>
-        <input type="text" placeholder="Computer Science, Mechanical, etc.">
-      </div>
+            <p class="subtitle">
+                Let Welcue understand your academic profile
+            </p>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label>GPA</label>
-          <input type="number" step="0.01" placeholder="8.5">
+
+            <!-- ================= NAME ================= -->
+
+            <div class="form-group">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                >
+
+            </div>
+
+
+            <!-- ================= EMAIL ================= -->
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+
+            </div>
+
+
+            <!-- ================= BRANCH ================= -->
+
+            <div class="form-group">
+
+                <label>Major / Branch</label>
+
+                <input
+                    type="text"
+                    id="branch"
+                    placeholder="Computer Science, Mechanical, etc."
+                >
+
+            </div>
+
+
+            <!-- ================= YEAR + CGPA ================= -->
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Year</label>
+
+                    <input
+                        type="number"
+                        id="year"
+                        placeholder="3"
+                        min="1"
+                        max="4"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>CGPA</label>
+
+                    <input
+                        type="number"
+                        id="cgpa"
+                        step="0.01"
+                        min="0"
+                        max="10"
+                        placeholder="8.5"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SKILLS ================= -->
+
+            <div class="form-group">
+
+                <label>Number of Technical Skills</label>
+
+                <input
+                    type="number"
+                    id="skills"
+                    min="0"
+                    placeholder="e.g. 5"
+                >
+
+            </div>
+
+
+            <!-- ================= PROJECTS ================= -->
+
+            <div class="form-group">
+
+                <label>Number of Projects</label>
+
+                <input
+                    type="number"
+                    id="projects"
+                    min="0"
+                    placeholder="e.g. 3"
+                >
+
+            </div>
+
+
+            <!-- ================= INTERNSHIPS ================= -->
+
+            <div class="form-group">
+
+                <label>Number of Internships</label>
+
+                <input
+                    type="number"
+                    id="internships"
+                    min="0"
+                    placeholder="e.g. 1"
+                >
+
+            </div>
+
+
+            <!-- ================= CERTIFICATIONS ================= -->
+
+            <div class="form-group">
+
+                <label>Number of Certifications</label>
+
+                <input
+                    type="number"
+                    id="certifications"
+                    min="0"
+                    placeholder="e.g. 2"
+                >
+
+            </div>
+
+
+            <!-- ================= PASSWORD ================= -->
+
+            <div class="form-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                >
+
+            </div>
+
+
+            <!-- ================= SAVE BUTTON ================= -->
+
+            <button
+                class="btn"
+                onclick="saveProfile()"
+            >
+                Save Profile
+            </button>
+
+
+            <!-- ================= MESSAGE ================= -->
+
+            <p
+                id="profileMessage"
+                style="margin-top:15px;"
+            ></p>
+
         </div>
-
-        <div class="form-group">
-          <label>Graduation Year</label>
-          <input type="number" placeholder="2026">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Technical Skills</label>
-        <textarea placeholder="Java, Python, SQL, React..."></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Projects / Experience</label>
-        <textarea placeholder="Describe key projects or internships"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>Upload Resume</label>
-        <input type="file">
-      </div>
-
-      <button class="btn">Save Profile</button>
 
     </div>
-  </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        async function saveProfile() {
+
+            // Get basic details
+
+            const name =
+                document.getElementById("name").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const branch =
+                document.getElementById("branch").value.trim();
+
+
+            // Get academic details
+
+            const year =
+                parseInt(
+                    document.getElementById("year").value
+                );
+
+            const cgpa =
+                parseFloat(
+                    document.getElementById("cgpa").value
+                );
+
+
+            // Get placement-related details
+
+            const skills =
+                parseInt(
+                    document.getElementById("skills").value
+                ) || 0;
+
+            const projects =
+                parseInt(
+                    document.getElementById("projects").value
+                ) || 0;
+
+            const internships =
+                parseInt(
+                    document.getElementById("internships").value
+                ) || 0;
+
+            const certifications =
+                parseInt(
+                    document.getElementById("certifications").value
+                ) || 0;
+
+
+            // Get password
+
+            const password =
+                document.getElementById("password").value;
+
+
+            // ================= VALIDATION =================
+
+            if (
+                !name ||
+                !email ||
+                !branch ||
+                isNaN(year) ||
+                isNaN(cgpa) ||
+                !password
+            ) {
+
+                alert("Please fill all required fields.");
+
+                return;
+            }
+
+
+            // ================= STUDENT DATA =================
+
+            const studentData = {
+
+                name: name,
+
+                email: email,
+
+                branch: branch,
+
+                year: year,
+
+                cgpa: cgpa,
+
+                password: password,
+
+                skills: skills,
+
+                projects: projects,
+
+                internships: internships,
+
+                certifications: certifications
+
+            };
+
+
+            console.log(
+                "Sending student data:",
+                studentData
+            );
+
+
+            try {
+
+                /*
+                 * TEMPORARY STUDENT ID
+                 *
+                 * Later we will replace this with
+                 * the ID of the logged-in student.
+                 */
+
+                const studentId = 1;
+
+
+                // ================= API REQUEST =================
+
+                const response = await fetch(
+
+                    `http://127.0.0.1:8000/students/${studentId}`,
+
+                    {
+
+                        method: "PUT",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify(studentData)
+
+                    }
+
+                );
+
+
+                // ================= ERROR =================
+
+                if (!response.ok) {
+
+                    const errorData =
+                        await response.json();
+
+                    console.error(
+                        "Backend error:",
+                        errorData
+                    );
+
+                    throw new Error(
+                        "Profile update failed"
+                    );
+
+                }
+
+
+                // ================= SUCCESS =================
+
+                const data =
+                    await response.json();
+
+                console.log(
+                    "Profile updated:",
+                    data
+                );
+
+
+                const message =
+                    document.getElementById(
+                        "profileMessage"
+                    );
+
+
+                message.textContent =
+                    "✅ Profile saved successfully!";
+
+
+                message.style.color =
+                    "green";
+
+
+            }
+
+            catch (error) {
+
+                console.error(error);
+
+
+                const message =
+                    document.getElementById(
+                        "profileMessage"
+                    );
+
+
+                message.textContent =
+                    "❌ Could not save profile.";
+
+
+                message.style.color =
+                    "red";
+
+            }
+
+        }
+
+    </script>
+
 </body>
+
 </html>
